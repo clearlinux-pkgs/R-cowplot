@@ -4,7 +4,7 @@
 #
 Name     : R-cowplot
 Version  : 0.9.2
-Release  : 2
+Release  : 3
 URL      : https://cran.r-project.org/src/contrib/cowplot_0.9.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/cowplot_0.9.2.tar.gz
 Summary  : Streamlined Plot Theme and Plot Annotations for 'ggplot2'
@@ -35,11 +35,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1521188712
+export SOURCE_DATE_EPOCH=1523296455
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1521188712
+export SOURCE_DATE_EPOCH=1523296455
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
