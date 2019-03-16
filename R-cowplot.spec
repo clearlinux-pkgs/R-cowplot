@@ -4,18 +4,16 @@
 #
 Name     : R-cowplot
 Version  : 0.9.4
-Release  : 15
+Release  : 16
 URL      : https://cran.r-project.org/src/contrib/cowplot_0.9.4.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/cowplot_0.9.4.tar.gz
 Summary  : Streamlined Plot Theme and Plot Annotations for 'ggplot2'
 Group    : Development/Tools
 License  : GPL-2.0
-Requires: R-ggplot2
-Requires: R-plyr
-Requires: R-scales
 BuildRequires : R-ggplot2
 BuildRequires : R-plyr
 BuildRequires : R-scales
+BuildRequires : R-viridis
 BuildRequires : buildreq-R
 
 %description
@@ -30,10 +28,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1546957592
+export SOURCE_DATE_EPOCH=1552731139
 
 %install
-export SOURCE_DATE_EPOCH=1546957592
+export SOURCE_DATE_EPOCH=1552731139
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -69,8 +67,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library cowplot|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  cowplot || :
 
 
 %files
@@ -112,3 +109,9 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/cowplot/help/paths.rds
 /usr/lib64/R/library/cowplot/html/00Index.html
 /usr/lib64/R/library/cowplot/html/R.css
+/usr/lib64/R/library/cowplot/tests/testthat.R
+/usr/lib64/R/library/cowplot/tests/testthat/Rplots.pdf
+/usr/lib64/R/library/cowplot/tests/testthat/test_align_plots.R
+/usr/lib64/R/library/cowplot/tests/testthat/test_get_legend.R
+/usr/lib64/R/library/cowplot/tests/testthat/test_get_panel.R
+/usr/lib64/R/library/cowplot/tests/testthat/test_ggdraw.R
