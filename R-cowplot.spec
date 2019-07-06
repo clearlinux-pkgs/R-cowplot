@@ -4,20 +4,33 @@
 #
 Name     : R-cowplot
 Version  : 0.9.4
-Release  : 22
+Release  : 23
 URL      : https://cran.r-project.org/src/contrib/cowplot_0.9.4.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/cowplot_0.9.4.tar.gz
 Summary  : Streamlined Plot Theme and Plot Annotations for 'ggplot2'
 Group    : Development/Tools
 License  : GPL-2.0
+Requires: R-ggplot2
+Requires: R-gridExtra
+Requires: R-gtable
+Requires: R-labeling
+Requires: R-munsell
+Requires: R-plyr
+Requires: R-scales
+Requires: R-stringi
 BuildRequires : R-ggplot2
+BuildRequires : R-gridExtra
+BuildRequires : R-gtable
+BuildRequires : R-labeling
+BuildRequires : R-munsell
 BuildRequires : R-plyr
 BuildRequires : R-scales
+BuildRequires : R-stringi
 BuildRequires : R-viridis
 BuildRequires : buildreq-R
 
 %description
-cowplot â An add-on to the ggplot2 plotting package
+cowplot – An add-on to the ggplot2 plotting package
 ====================================================
 
 %prep
@@ -27,13 +40,13 @@ cowplot â An add-on to the ggplot2 plotting package
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1552731139
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1562444704
 
 %install
-export SOURCE_DATE_EPOCH=1552731139
+export SOURCE_DATE_EPOCH=1562444704
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -62,12 +75,12 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc  cowplot || :
+R CMD check --no-manual --no-examples --no-codoc cowplot || :
 
 
 %files
