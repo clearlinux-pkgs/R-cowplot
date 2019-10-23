@@ -4,7 +4,7 @@
 #
 Name     : R-cowplot
 Version  : 1.0.0
-Release  : 24
+Release  : 25
 URL      : https://cran.r-project.org/src/contrib/cowplot_1.0.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/cowplot_1.0.0.tar.gz
 Summary  : Streamlined Plot Theme and Plot Annotations for 'ggplot2'
@@ -19,15 +19,11 @@ BuildRequires : R-gtable
 BuildRequires : R-rlang
 BuildRequires : R-scales
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
-Provides various features that help with creating publication-quality figures
-    with 'ggplot2', such as a set of themes, functions to align plots and arrange
-    them into complex compound figures, and functions that make it easy to annotate
-    plots and or mix plots with images. The package was originally written for
-    internal use in the Wilke lab, hence the name (Claus O. Wilke's plot package).
-    It has also been used extensively in the book Fundamentals of Data
-    Visualization.
+<img width="120px" alt="cowplot logo" align="right" src="man/figures/logo.png">
+# cowplot – Streamlined plot theme and plot annotations for ggplot2
 
 %prep
 %setup -q -c -n cowplot
@@ -37,10 +33,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1562875784
+export SOURCE_DATE_EPOCH=1571813540
 
 %install
-export SOURCE_DATE_EPOCH=1562875784
+export SOURCE_DATE_EPOCH=1571813540
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
