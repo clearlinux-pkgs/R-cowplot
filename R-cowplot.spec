@@ -4,7 +4,7 @@
 #
 Name     : R-cowplot
 Version  : 1.1.1
-Release  : 39
+Release  : 40
 URL      : https://cran.r-project.org/src/contrib/cowplot_1.1.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/cowplot_1.1.1.tar.gz
 Summary  : Streamlined Plot Theme and Plot Annotations for 'ggplot2'
